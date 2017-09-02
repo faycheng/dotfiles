@@ -22,19 +22,18 @@ ZSH_THEME="robbyrussell"
 
 plugins=(zsh-autosuggestions zsh-syntax-highlighting pip python redis-cli sublime docker encode64 autojump)
 
-LAUNCH_FILE_PATH=$(readlink $HOME/.zshrc)
-LAUNCH_FILE_DIR=$(dirname $LAUNCH_FILE_PATH)
 
 
 export ZSH=$HOME/.oh-my-zsh		# Path to your oh-my-zsh installation.
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-
-source $LAUNCH_FILE_DIR/git.sh
-
-#--------------------------------------------------------------------------
-# OTHERS
-
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
+
+export DOTFILES_DIR=$(dirname $(readlink $HOME/.zshrc))
+source $DOTFILES_DIR/git.sh
+source $DOTFILES_DIR/proxy.sh
+
+
+
+proxy::http::open
