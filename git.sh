@@ -5,7 +5,7 @@ alias gd="git diff "
 alias ga="git add "
 alias gc="git commit -m "
 alias gl="git log"
-alias gp="git push origin "
+alias gp="git push origin $(git branch | awk -F ' ' '{{print $2}}')"
 
 gb(){
     branch_type=$1
