@@ -50,5 +50,10 @@ if [ -f $DOTFILES_DIR/conf.json ]; then
         export WORK_DIR=$WORK_DIR
         cd $WORK_DIR
     fi
+    WORK_VENV=$(jq -r '.work_venv' $DOTFILES_DIR/conf.json)
+    if [ ! -z $WORK_VENV ] || [ ! $WORK_VENV = " " ] || [ ! $WORK_VENV = "\n" ];then
+        venv activate $WORK_VENV
+    fi
+
 fi
 
