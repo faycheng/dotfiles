@@ -41,7 +41,7 @@ proxy::http::open
 
 if [ -f $DOTFILES_DIR/conf.json ]; then
     WORK_DIR=$(jq -r '.work_dir' $DOTFILES_DIR/conf.json)
-    if [ -f $WORK_DIR ]; then
+    if [ -d $WORK_DIR ]; then
         export WORK_DIR=$WORK_DIR
         cd $WORK_DIR
     fi
