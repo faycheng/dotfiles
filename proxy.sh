@@ -21,10 +21,10 @@ proxy(){
         env | grep proxy
         ;;
     *)
-        echo "Usage: proxy COMMAND"
+        echo "Usage: proxy COMMAND\n"
         echo "Management Commands:"
-        echo "%-10s %-30s" open "open http proxy"
-        echo "%-10s %-30s" close "close http proxy"
+        printf "%-10s %-30s\n" open "open http proxy"
+        printf "%-10s %-30s\n" close "close http proxy"
         ;;
      esac
 }
