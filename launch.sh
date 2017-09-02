@@ -27,6 +27,7 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting pip python redis-cli sublim
 export ZSH=$HOME/.oh-my-zsh		# Path to your oh-my-zsh installation.
 source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
 
