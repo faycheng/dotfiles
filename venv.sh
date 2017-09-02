@@ -175,7 +175,14 @@ venv() {
         _venv::list
         ;;
     *)
-        echo "Usage: venv"
+        echo "Usage: venv\n"
+        echo "Management Commands:"
+        printf "%-10s %-30s\n" gen "Generate venv: gen VENV_NAME PYTHON_EXECUTABLE"
+        printf "%-10s %-30s\n" remove "Remove venv: remove VENV_NAME"
+        printf "%-10s %-30s\n" desc "Show details of venv: desc VENV_NAME"
+        printf "%-10s %-30s\n" list "List all venvs: list"
+        printf "%-10s %-30s\n" activate "Activate venv: activate VENV_NAME"
+        printf "%-10s %-30s\n" deactivate "Deactivate working venv: deactivate"
         ;;
     esac
 }
