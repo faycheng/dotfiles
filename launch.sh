@@ -1,3 +1,6 @@
+#!/bin/zsh
+
+
 # ZSH
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
@@ -19,7 +22,7 @@ ZSH_THEME="robbyrussell"
 
 plugins=(zsh-autosuggestions zsh-syntax-highlighting pip python redis-cli sublime docker encode64 autojump)
 
-LAUNCH_FILE_PATH=$(realpath "$0")
+LAUNCH_FILE_PATH=$(readlink $HOME/.zshrc)
 LAUNCH_FILE_DIR=$(dirname $LAUNCH_FILE_PATH)
 
 
@@ -28,7 +31,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 
-source $LAUNCH_FILE_PATH/git.sh
+source $LAUNCH_FILE_DIR/git.sh
 
 #--------------------------------------------------------------------------
 # OTHERS
