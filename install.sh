@@ -134,6 +134,24 @@ link::zshrc(){
 }
 
 
+link::zsh_history(){
+    if [ -f $HOME/.zsh_history ] && [ -f $FILE_DIR/private/zsh_history ]; then
+        echo -n "Remove $HOME/.zsh_history (y/n)?"
+        read confirm
+        if [ ! $confirm = 'y' ];then
+            exit 1
+        fi
+        mv $HOME/.zsh_history $HOME/.zsh_history.bak
+        ln -s $FILE_DIR/private/zsh_history $HOME/.zsh_history
+    fi
+
+    if [ -f $HOME/.zsh_history ] && [ ! -f $FILE_DIR/private/zsh_history ]; then
+        mv $HOME/.zsh_history $FILE_DIR/private/zsh_history
+        ln -s $FILE_DIR/private/zsh_history $HOME/.zsh_history
+    fi
+
+}
+
 main(){
     proxy::http::open
 
@@ -157,6 +175,7 @@ main(){
     install::python::prompt_toolkit
 
     link::zshrc
+    link::zsh_history
 
     proxy::http::close
 }
