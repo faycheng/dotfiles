@@ -27,10 +27,11 @@ install::pip(){
     if [ "$(command::exist pip)" = "False" ]; then
         sudo -H python $FILE_DIR/get-pip.py
     fi
+    sudo -H pip install --ignore-installed setuptools
 }
 
-install::python::virtualenv(){
-    sudo -H pip install virtualenv
+install::python::pipenv(){
+    sudo -H pip install pipenv
 }
 
 install::python::six(){
@@ -171,7 +172,7 @@ main(){
     install::pip
 
     install::python::six
-    install::python::virtualenv
+    install::python::pipenv
     install::python::fire
     install::python::prompt_toolkit
 

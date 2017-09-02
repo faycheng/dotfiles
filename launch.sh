@@ -30,6 +30,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
+
+
+
 export DOTFILES_DIR=$(dirname $(readlink $HOME/.zshrc))
 source $DOTFILES_DIR/git.sh
 source $DOTFILES_DIR/proxy.sh
