@@ -17,7 +17,7 @@ HISTSIZE=1000000000
 SAVEHIST=1000000000
 ZSH_THEME="robbyrussell"
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting pip python redis-cli sublime docker encode64)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting pip python redis-cli sublime docker encode64 autojump)
 
 
 export ZSH=$HOME/.oh-my-zsh		# Path to your oh-my-zsh installation.
