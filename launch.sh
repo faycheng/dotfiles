@@ -37,10 +37,11 @@ export DOTFILES_DIR=$(dirname $(readlink $HOME/.zshrc))
 source $DOTFILES_DIR/git.sh
 source $DOTFILES_DIR/proxy.sh
 source $DOTFILES_DIR/vscode.sh
-
+source $DOTFILES_DIR/venv.sh
 
 
 proxy start
+
 
 if [ -f $DOTFILES_DIR/conf.json ]; then
     WORK_DIR=$(jq -r '.work_dir' $DOTFILES_DIR/conf.json)
