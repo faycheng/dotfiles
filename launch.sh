@@ -33,6 +33,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export DOTFILES_DIR=$(dirname $(readlink $HOME/.zshrc))
 source $DOTFILES_DIR/git.sh
 source $DOTFILES_DIR/proxy.sh
+source $DOTFILES_DIR/vscode.sh
 
 
 
