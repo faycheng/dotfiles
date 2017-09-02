@@ -30,7 +30,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
-
 export DOTFILES_DIR=$(dirname $(readlink $HOME/.zshrc))
 source $DOTFILES_DIR/git.sh
 source $DOTFILES_DIR/proxy.sh
@@ -39,3 +38,12 @@ source $DOTFILES_DIR/vscode.sh
 
 
 proxy::http::open
+
+if [ -f $DOTFILES_DIR/conf.json ]; then
+    WORK_DIR=$(jq -r '.work_dir' $DOTFILES_DIR/conf.json)
+    if [ -f $WORK_DIR ]; then
+        export WORK_DIR=$WORK_DIR
+        cd $WORK_DIR
+    fi
+fi
+

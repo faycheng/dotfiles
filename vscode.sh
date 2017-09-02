@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-function vs () {
+function vs() {
     if [ $# = 0 ]; then
         open -a "Visual Studio Code" ./
     fi
