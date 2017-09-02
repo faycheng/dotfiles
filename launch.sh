@@ -40,7 +40,7 @@ source $DOTFILES_DIR/vscode.sh
 source $DOTFILES_DIR/venv.sh
 
 
-proxy start
+proxy open
 
 
 if [ -f $DOTFILES_DIR/conf.json ]; then
