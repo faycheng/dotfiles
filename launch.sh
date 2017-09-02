@@ -41,6 +41,7 @@ source $DOTFILES_DIR/venv.sh
 
 
 proxy open
+clear
 
 
 if [ -f $DOTFILES_DIR/conf.json ]; then
