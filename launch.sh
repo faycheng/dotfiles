@@ -40,7 +40,7 @@ source $DOTFILES_DIR/vscode.sh
 
 
 
-proxy::http::open
+proxy start
 
 if [ -f $DOTFILES_DIR/conf.json ]; then
     WORK_DIR=$(jq -r '.work_dir' $DOTFILES_DIR/conf.json)
