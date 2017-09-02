@@ -81,6 +81,7 @@ install::python3(){
 
 install::coreutils(){
     brew install coreutils
+    brew upgrade coreutils
 }
 
 install::corkscrew(){
