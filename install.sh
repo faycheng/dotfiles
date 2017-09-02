@@ -49,6 +49,8 @@ install::oh_my_zsh(){
     if [ "$(command::exist zsh)" = "False" ]; then
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     fi
+    brew install zsh-autosuggestions
+    brew install zsh-syntax-highlighting
 }
 
 install::wget(){
