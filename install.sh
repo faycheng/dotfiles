@@ -115,6 +115,13 @@ install::wrk(){
     fi
 }
 
+
+install::storm(){
+    if [ "$(command::exist storm)" = "False" ]; then
+        brew install stormssh
+    fi
+}
+
 install::fuck(){
     if [ "$(command::exist fuck)" = "False" ]; then
         brew install thefuck
@@ -166,6 +173,7 @@ main(){
     install::go
     install::htop
     install::wrk
+    install::storm
 
 
     install::python3
