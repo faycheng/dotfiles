@@ -135,7 +135,7 @@ _venv::desc() {
     echo Location: $VENVS_PATH/$venv_name
     echo Activate: venv activate $venv_name
     packeages=$($pip_exec freeze --local | xargs echo)
-    if [ -z $packeages ] || [ $packeages = "\n" ] || [ $packages = " " ]; then
+    if [ -z $packeages ] || [ "$packeages" = "\n" ] || [ "$packages" = " " ]; then
         echo Packages: None
         return 0
     fi
