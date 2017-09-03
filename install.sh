@@ -134,7 +134,7 @@ link::zshrc(){
         echo -n "Remove $HOME/.zshrc (y/n)?"
         read confirm
         if [ ! $confirm = 'y' ];then
-            exit 1
+            return 0
         fi
         mv $HOME/.zshrc $HOME/.zshrc.bak
     fi
@@ -148,7 +148,7 @@ link::ssh(){
         echo -n "Remove $HOME/.ssh (y/n)?"
         read confirm
         if [ ! $confirm = 'y' ];then
-            exit 1
+            return 0
         fi
         mv $HOME/.ssh $HOME/.ssh.bak
         ln -s $FILE_DIR/private/ssh $HOME/.ssh
@@ -165,7 +165,7 @@ link::zsh_history(){
         echo -n "Remove $HOME/.zsh_history (y/n)?"
         read confirm
         if [ ! $confirm = 'y' ];then
-            exit 1
+            return 0
         fi
         mv $HOME/.zsh_history $HOME/.zsh_history.bak
         ln -s $FILE_DIR/private/zsh_history $HOME/.zsh_history
