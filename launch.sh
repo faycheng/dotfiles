@@ -48,7 +48,9 @@ if [ -f $DOTFILES_DIR/conf.json ]; then
     WORK_DIR=$(jq -r '.work_dir' $DOTFILES_DIR/conf.json)
     if [ -d $WORK_DIR ]; then
         export WORK_DIR=$WORK_DIR
-        cd $WORK_DIR
+        if [ -z ${VIRTUAL_ENV} ]; then
+            cd $WORK_DIR
+        fi
     fi
     WORK_VENV=$(jq -r '.work_venv' $DOTFILES_DIR/conf.json)
     if [ ! -z $WORK_VENV ] || [ ! $WORK_VENV = " " ] || [ ! $WORK_VENV = "\n" ];then
