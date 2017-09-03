@@ -139,7 +139,7 @@ link::zshrc(){
         mv $HOME/.zshrc $HOME/.zshrc.bak
     fi
     ln -s $FILE_DIR/launch.sh $HOME/.zshrc
-    echo Link zshrc success
+    echo Link zshrc successfully
 }
 
 
@@ -155,6 +155,7 @@ link::ssh(){
         if [ -f $FILE_DIR/private/ssh/id_rsa ]; then
             chmod 400 $FILE_DIR/private/ssh/id_rsa
         fi
+        echo Link ssh successfully
     fi
 
 }
@@ -168,11 +169,13 @@ link::zsh_history(){
         fi
         mv $HOME/.zsh_history $HOME/.zsh_history.bak
         ln -s $FILE_DIR/private/zsh_history $HOME/.zsh_history
+        echo link zsh history successfully
     fi
 
     if [ -f $HOME/.zsh_history ] && [ ! -f $FILE_DIR/private/zsh_history ]; then
         mv $HOME/.zsh_history $FILE_DIR/private/zsh_history
         ln -s $FILE_DIR/private/zsh_history $HOME/.zsh_history
+        echo link zsh history successfully
     fi
 
 }
