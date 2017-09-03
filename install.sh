@@ -169,7 +169,7 @@ link::zsh_history(){
         fi
         mv $HOME/.zsh_history $HOME/.zsh_history.bak
         ln -s $FILE_DIR/private/zsh_history $HOME/.zsh_history
-        echo link zsh history successfully
+        echo Link zsh history successfully
     fi
 
     if [ -f $HOME/.zsh_history ] && [ ! -f $FILE_DIR/private/zsh_history ]; then
