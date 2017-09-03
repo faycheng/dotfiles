@@ -143,6 +143,22 @@ link::zshrc(){
 }
 
 
+link::ssh(){
+    if [ -d $FILE_DIR/private/ssh ]; then
+        echo -n "Remove $HOME/.ssh (y/n)?"
+        read confirm
+        if [ ! $confirm = 'y' ];then
+            exit 1
+        fi
+        mv $HOME/.ssh $HOME/.ssh.bak
+        ln -s $FILE_DIR/private/ssh $HOME/.ssh
+        if [ -f $FILE_DIR/private/ssh/id_rsa ]; then
+            chmod 400 $FILE_DIR/private/ssh/id_rsa
+        fi
+    fi
+
+}
+
 link::zsh_history(){
     if [ -f $HOME/.zsh_history ] && [ -f $FILE_DIR/private/zsh_history ]; then
         echo -n "Remove $HOME/.zsh_history (y/n)?"
@@ -186,6 +202,7 @@ main(){
 
     link::zshrc
     link::zsh_history
+    link::ssh
 
     proxy::http::close
 }
