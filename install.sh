@@ -34,6 +34,10 @@ install::python::pipenv(){
     sudo -H pip install pipenv
 }
 
+install::python::httpie(){
+    sudo -H pip install httpie
+}
+
 install::python::six(){
     echo y | sudo -H pip install --ignore-installed six
 }
@@ -144,6 +148,7 @@ link::zshrc(){
 
 
 link::ssh(){
+    
     if [ -d $FILE_DIR/private/ssh ]; then
         echo -n "Remove $HOME/.ssh (y/n)?"
         read confirm
@@ -199,9 +204,11 @@ main(){
     install::pip
 
     install::python::six
+    install::python::httpie
     install::python::pipenv
     install::python::fire
     install::python::prompt_toolkit
+
 
     link::zshrc
     link::zsh_history
