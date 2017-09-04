@@ -191,6 +191,11 @@ link::zsh_history(){
 main(){
     proxy::http::open
 
+
+    if [ ! -z $VIRTUAL_ENV ];then
+        export PATH=$(python -c "print(':'.join([p for p in '$PATH'.split(':') if '$VIRTUAL_ENV' not in p]))")
+    fi
+
     install::wget
     install::jq
     install::oh_my_zsh
