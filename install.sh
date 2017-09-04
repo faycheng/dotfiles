@@ -148,7 +148,10 @@ link::zshrc(){
 
 
 link::ssh(){
-    
+    if [ "$FILE_DIR/private/ssh" = "$(realpath $HOME/.ssh)" ]; then
+        echo Link ssh successfully
+        return 1
+    fi
     if [ -d $FILE_DIR/private/ssh ]; then
         echo -n "Remove $HOME/.ssh (y/n)?"
         read confirm
