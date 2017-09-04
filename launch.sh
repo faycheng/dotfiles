@@ -46,10 +46,10 @@ clear
 
 if [ -f $DOTFILES_DIR/conf.json ]; then
     WORK_DIR=$(jq -r '.work_dir' $DOTFILES_DIR/conf.json)
-    if [ -d $WORK_DIR ]; then
+    if [ -d $HOME/$WORK_DIR ]; then
         export WORK_DIR=$WORK_DIR
         if [ -z ${VIRTUAL_ENV} ]; then
-            cd $WORK_DIR
+            cd $HOME/$WORK_DIR
         fi
     fi
     WORK_VENV=$(jq -r '.work_venv' $DOTFILES_DIR/conf.json)
