@@ -3,4 +3,4 @@
 *.pyc
 *.vscode
 conf.json
-private
+private*.DS_Store
