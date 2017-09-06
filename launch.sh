@@ -48,7 +48,7 @@ if [ -f $DOTFILES_DIR/conf.json ]; then
     WORK_DIR=$(jq -r '.work_dir' $DOTFILES_DIR/conf.json)
     if [ -d $HOME/$WORK_DIR ]; then
         export WORK_DIR=$WORK_DIR
-        if [ ! -z ${VIRTUAL_ENV} ]; then
+        if [ "$PWD" = "$HOME" ]; then
             cd $HOME/$WORK_DIR
         fi
     fi
