@@ -12,3 +12,5 @@ workon() {
     fi
     echo "Path($WORKS_DIR/$work.sh) not found"
 }
+
+alias wo=workon
