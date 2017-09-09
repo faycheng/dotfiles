@@ -188,6 +188,21 @@ link::zsh_history(){
 
 }
 
+
+docker::pull() {
+    echo -n "Pull images (y/n)?"
+        read confirm
+        if [ ! $confirm = 'y' ];then
+            return 0
+        fi
+    for image in $(cat $FILE_DIR/private/image_requirements.txt | xargs echo);
+    do
+        docker pull $image
+    done
+
+}
+
+
 main(){
     proxy::http::open
 
@@ -221,6 +236,8 @@ main(){
     link::zshrc
     link::zsh_history
     link::ssh
+
+    docker::pull
 
     proxy::http::close
 }
