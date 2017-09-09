@@ -38,6 +38,7 @@ source $DOTFILES_DIR/git.sh
 source $DOTFILES_DIR/proxy.sh
 source $DOTFILES_DIR/vscode.sh
 source $DOTFILES_DIR/venv.sh
+source $DOTFILES_DIR/work.sh
 
 
 proxy open
