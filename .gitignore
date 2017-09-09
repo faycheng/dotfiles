@@ -4,3 +4,4 @@
 *.vscode
 conf.json
 private*.DS_Store
+.DS_Store
