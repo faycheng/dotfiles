@@ -21,4 +21,22 @@ gb(){
     fi
 }
 
+
+gg() {
+    namespace=$1
+    repo_name=$2
+    if [ -z $repo_name ] || [ -z $namespace ]; then
+        echo 'gg NAMESPACE REPO'
+        return 1
+    fi
+    mkdir $repo_name
+    cd $repo_name
+    echo "# $repo_name" >> README.md
+    git init
+    git add README.md
+    git commit -m 'init README'
+    git remote add origin https://github.com/$namespace/$repo_name.git
+    git push origin master
+
+}
 compctl -k '(feature hotfix)' gb
