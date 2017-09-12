@@ -60,3 +60,8 @@ if [ -f $DOTFILES_DIR/conf.json ]; then
 
 fi
 
+
+if [ -f $DOTFILES_DIR/private/alias.sh ]; then
+    source $DOTFILES_DIR/private/alias.sh
+fi
+
