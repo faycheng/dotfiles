@@ -10,6 +10,7 @@
 * http proxy
 * vscode alias
 * storm
+* fire scripts
 
 ## Install
 
