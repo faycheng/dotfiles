@@ -57,6 +57,7 @@ install::oh_my_zsh(){
     brew install zsh-autosuggestions
     brew install zsh-syntax-highlighting
     brew install autojump
+    brew install fzf && /usr/local/opt/fzf/install
 }
 
 install::wget(){

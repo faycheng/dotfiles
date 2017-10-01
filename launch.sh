@@ -65,3 +65,5 @@ if [ -f $DOTFILES_DIR/private/alias.sh ]; then
     source $DOTFILES_DIR/private/alias.sh
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
