@@ -39,6 +39,7 @@ source $DOTFILES_DIR/proxy.sh
 source $DOTFILES_DIR/vscode.sh
 source $DOTFILES_DIR/venv.sh
 source $DOTFILES_DIR/work.sh
+source $DOTFILES_DIR/charm.sh
 
 
 proxy open
