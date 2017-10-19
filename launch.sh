@@ -42,7 +42,7 @@ source $DOTFILES_DIR/work.sh
 source $DOTFILES_DIR/charm.sh
 
 
-proxy open
+#proxy open
 clear
 
 
@@ -68,3 +68,5 @@ fi
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="$PATH:/Users/chengfei/.venvs/toolkit/bin"
