@@ -39,6 +39,7 @@ _common::list_dirs(){
     python -c "from pathlib import Path;print(' '.join([str(child) for child in Path('$parent_dir').iterdir() if child.is_dir()]))"
 }
 
+
 _venv::gen(){
     if [ ! -z $VIRTUAL_ENV ];then
         OLD_ENV=$VIRTUAL_ENV
@@ -57,10 +58,12 @@ _venv::gen(){
     if [ $? -ne 0 ];then
         return 1
     fi
-
     if [ $3 = "-r" ] && [ ! -z $4 ]; then
         _venv::activate $venv_name
-        pip install -r $4
+        cat $4 | while read line
+        do
+            eval "pip install $line"
+        done
     fi
 
     _venv::desc $venv_name
